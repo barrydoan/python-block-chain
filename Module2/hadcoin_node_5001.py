@@ -120,7 +120,7 @@ def mine_block():
                 'timestamp': block['timestamp'],
                 'proof': block['proof'],
                 'previous_hash': block['previous_hash'],
-                'transactions': block['transaction']}
+                'transactions': block['transactions']}
     return jsonify(response), 200
     
 # Getting 
@@ -155,7 +155,7 @@ def add_transaction():
 
 
 # Connecting new nodes
-@app.route('connect_node', methods = ['POST'])
+@app.route('/connect_node', methods = ['POST'])
 def connect_node():
     json = request.get_json()
     nodes = json.get('nodes')
@@ -181,6 +181,6 @@ def replace_chain():
 
 
 # running app
-app.run(host='0.0.0.0', port=5000)
+app.run(host='0.0.0.0', port=5001)
 
 
